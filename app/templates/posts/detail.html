@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+
+{% block title %} {{ post.title }} {% endblock %}
+
+{% block content %}
+
+<div class="p-3 bg-light" id="post-info">
+    <p>{{ post.content|safe }}</p>
+</div>
+<br>
+
+<div class="p-2">
+    <form action="" method="post" class="p-2 w-50 bg-light text-secondary" id="post-comment-form">
+        <h5>Add comment</h5>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Send" class="btn btn-outline-primary">
+    </form>
+</div>
+<br>
+
+{% for comment in comments %}
+    <div class="w-75 p-2 bg-light text-secondary" id="post-comment">
+        <h5>{{ comment.user_name }} | {{ post.created }}</h5>
+        <hr>
+        <p>{{ comment.body }}</p>
+    </div><br>
+{% endfor %}
+
+{% endblock %}

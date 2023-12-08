@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+{% block title %} Posts {% endblock %}
+
+{% block content %}
+
+{% if posts %}
+{% for post in posts %}
+    <div class="p-3 bg-light text-dark" id="posts-post">
+        <img src="/media/{{ post.image }}" alt="img...">
+        <h5><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h5>
+        <p>Author: {{ post.user }} <br>Created: {{ post.created }} <br>Updated: {{ post.updated }}</p>
+        <hr>
+        <p>{{ post.description }}</p>
+    </div> <br>
+{% endfor %}
+{% else %}
+<h3></h3>
+{% endif %}
+
+{% endblock %}

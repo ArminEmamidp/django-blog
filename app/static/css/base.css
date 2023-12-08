@@ -1,0 +1,33 @@
+#nav a {
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: aliceblue;
+    margin-right: 2%;
+    transition: 0.2s;
+}
+#nav a:hover {
+    color: rgb(191, 210, 227);
+}
+
+#posts-post {
+    width: 70%;
+    margin-left: 14%;
+    border-radius: 5px;
+
+}
+#posts-post img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+#post-info {
+    border-radius: 5px;
+}
+
+#post-comment-form {
+    border-radius: 5px;
+}
+
+#post-comment {
+    border-radius: 5px;
+}
