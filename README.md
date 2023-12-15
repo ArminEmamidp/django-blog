@@ -19,5 +19,7 @@ To create content on blog, you need to use the admin panel
 Open the bowser and go to this address:
 
 localhost:8000/admin
+
 Username: admin
+
 password: a
