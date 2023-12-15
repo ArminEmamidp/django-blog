@@ -5,7 +5,6 @@ Project implementation steps:
 1: Go to the project path in the terminal
 
 2: Write the following commands in the terminal:
-
 pip install -r requirements.txt
 
 python manage.py migrate
