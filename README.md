@@ -18,11 +18,9 @@ Project implementation steps:
 
 To create content on blog, you need to use the admin panel:
 
-Write the following commands:
+Open the browser and write the following commands:
 
-    1: Open the bowser and go to this address:
-
-    2: localhost:8000/admin
+    localhost:8000/admin
     
     Username: admin
     
