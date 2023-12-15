@@ -16,10 +16,13 @@ Project implementation steps:
 
     localhost:8000
 
-To create content on blog, you need to use the admin panel
-Open the bowser and go to this address:
+To create content on blog, you need to use the admin panel:
 
-    localhost:8000/admin
+Write the following commands:
+
+    1: Open the bowser and go to this address:
+
+    2: localhost:8000/admin
     
     Username: admin
     
