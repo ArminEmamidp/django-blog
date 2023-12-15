@@ -25,3 +25,9 @@ Open the browser and write the following commands:
     Username: admin
     
     password: a
+
+To create superuser for manage the admin panel, you can write the under commands in the project path:
+    python manage.py createsuperuser
+
+    Write the user info in later steps
+
