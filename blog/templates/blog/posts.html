@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %} Blog {% endblock %}
+
+{% block content %}
+
+{% if posts %}
+    <br>
+    <form action="" method="get" class="bg-info text-light p-2" style="border-radius:5px;">
+        {{ form.as_p }}
+        <input type="submit" value="Search" class="btn btn-outline-light w-50"  style="margin-left:24%">
+    </form><br>
+    {% for post in posts %}
+        <div id="posts">
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.description }}</p>
+            <hr>
+            <h3>C: {{ post.created }}</h3>
+            <h3>U: {{ post.updated }}</h3>
+            <hr>
+            <a href="{{ post.post_detail }}" class="btn btn-outline-info w-100">Details</a>
+        </div><br>
+    {% endfor %}
+{% else %}
+<br>
+<div id="home-div" align="center">
+    <h1>There are not any post</h1>
+</div>
+{% endif %}
+
+{% endblock %}

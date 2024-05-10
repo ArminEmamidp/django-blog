@@ -1,0 +1,38 @@
+#home-div {
+    margin-bottom: 2%;
+    padding: 1%;
+    box-shadow: 2px 2px 10px black;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+#posts {
+    width: 80%;
+    padding: 1%;
+    margin-left: 9%;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 4px 5px 10px black;
+}
+
+#comments {
+    padding: 1%;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: lightblue;
+}
+
+@media screen and (max-width: 700px) {
+    #home-div h1, h2, h3 {
+        font-size: 1.4rem;
+    }
+
+    #posts {
+        width: 95%;
+        margin-left: 2%;
+    }
+    #posts h1, h2, h3 {
+        font-size: 1rem;
+    }
+}

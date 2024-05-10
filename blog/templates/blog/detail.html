@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ post.title }} {% endblock %}
+
+{% block content %}
+
+<br>
+<div id="posts">
+    {{ post.media }}
+    {{ post.content|safe }}
+    <hr>
+    <form action="" method="post">
+        <h4 align="center">Comments: {{ comments.count }}</h4>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Send" class="btn btn-outline-info w-100">
+    </form>
+    <hr>
+    {% for comment in comments %}
+        <div id="comments">
+            {{ comment.content }}
+            <hr>
+            <h4>Posted by: <a href="{% url 'account:profile' comment.auther %}">{{ comment.auther }}</a></h4>
+            <h4>{{ comment.created }}</h4>
+        </div><br>
+    {% endfor %}
+</div><br>
+
+{% endblock %}

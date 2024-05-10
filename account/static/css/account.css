@@ -1,0 +1,42 @@
+#account-form {
+    margin-top: 3%;
+    padding: 1%;
+    font-size: 1rem;
+    border-radius: 5px;
+    color: aliceblue;
+    background-color: black;
+}
+
+#profile-div {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5%;
+    padding: 1%;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 4px 5px 10px black;
+}
+#profile-div h1, h2, h3 {
+    font-size: 1.5rem;
+}
+
+@media screen and (max-width: 700px) {
+    #account-form {
+        margin-top: 5%;
+        font-size: 0.9rem;
+    }
+    #account-form input {
+        font-size: 0.8rem;
+    }
+    #account-form input[type='submit'] {
+        font-size: 0.8rem;
+    }
+
+    #profile-div h1, h2, h3{
+        font-size: 1.2rem;
+    }
+    #profile-div a {
+        font-size: 0.9rem;
+    }
+}

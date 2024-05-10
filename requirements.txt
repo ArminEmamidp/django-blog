@@ -1,0 +1,2 @@
+django==4.2.11
+django-froala-editor==4.2.0
