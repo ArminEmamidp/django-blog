@@ -7,9 +7,9 @@
 }
 
 #posts {
-    width: 80%;
+    width: 95%;
     padding: 1%;
-    margin-left: 9%;
+    margin-left: 2%;
     border: 1px solid black;
     border-radius: 5px;
     box-shadow: 4px 5px 10px black;
@@ -20,7 +20,27 @@
     text-align: center;
     border: 1px solid black;
     border-radius: 5px;
+    color: black;
     background-color: lightblue;
+}
+
+#replies {
+    padding: 1%;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    color: black;
+    background-color: white;
+}
+
+#comment-form {
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+#reply-form {
+    border: 1px solid black;
+    border-radius: 5px;
 }
 
 @media screen and (max-width: 700px) {

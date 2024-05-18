@@ -5,25 +5,47 @@
 {% block content %}
 
 <br>
-<div id="posts">
+<!-- <div id="posts"> -->
     {{ post.media }}
     {{ post.content|safe }}
     <hr>
-    <form action="" method="post">
+    <form action="" method="post" class="alert-info p-1" id="comment-form">
         <h4 align="center">Comments: {{ comments.count }}</h4>
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="Send" class="btn btn-outline-info w-100">
     </form>
+    {% if comments %}
     <hr>
     {% for comment in comments %}
         <div id="comments">
-            {{ comment.content }}
+            <p>{{ comment.content }}</p>
+            <h5>
+                Posted by: <a href="{% url 'account:profile' comment.auther %}">{{ comment.auther }}</a><br>
+                {{ comment.created }}
+            </h5>
             <hr>
-            <h4>Posted by: <a href="{% url 'account:profile' comment.auther %}">{{ comment.auther }}</a></h4>
-            <h4>{{ comment.created }}</h4>
+            <form action="{{ comment.comment_reply }}" method="post" class="alert-light p-1" id="reply-form">
+                <h5 align="center">Replies: {{ comment.replies.count }}</h5>
+                {% csrf_token %}
+                {{ form_2.as_p }}
+                <input type="submit" value="Send" class="btn btn-outline-info w-100">
+            </form><br>
+            {% if comment.replies %}
+            {% for reply in comment.replies.all %}
+            <div id="replies">
+                <p>{{ reply.content }}</p>
+                <h5>
+                    Posted by: <a href="{% url 'account:profile' reply.auther %}">{{ reply.auther }}</a><br>
+                    {{ reply.created }}
+                </h5>
+            </div><br>
+            {% endfor %}
+            {% endif %}
         </div><br>
     {% endfor %}
-</div><br>
+    {% endif %}
+<!-- </div -->><br>
 
 {% endblock %}
+

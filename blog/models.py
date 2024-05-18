@@ -25,17 +25,15 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
-    auther = models.ForeignKey(User, on_delete=models.CASCADE, related_name='comments')
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
-    content = models.TextField(max_length=2000)
-    created = models.DateTimeField(auto_now_add=True)
+    auther = models.ForeignKey(User, on_delete=models.CASCADE, related_name='comments', null=True)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments', null=True)
+    content = models.TextField(max_length=2000, null=True)
+    is_reply = models.BooleanField(default=False, null=True)
+    reply = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, related_name='replies', null=True)
+    created = models.DateTimeField(auto_now_add=True, null=True)
 
     class Meta:
         ordering = ['-created']
 
-
-class Like(models.Model):
-    auther =models.ForeignKey(User, on_delete=models.CASCADE, related_name='likes')
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='likes')
-    created = models.DateTimeField(auto_now_add=True)
-    
+    def comment_reply(self):
+        return reverse('blog:post_comment_reply', args=[self.post.id, self.post.slug, self.id])

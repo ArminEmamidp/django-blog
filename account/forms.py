@@ -15,6 +15,11 @@ class SignUnForm(forms.Form):
         username = self.cleaned_data['username']
         user = User.objects.filter(username=username)
 
+        invalid_chars = ['<', '>', '(', ')', '{', '}', '[', ']', '\\', '/', '|', '.', ',', '?', '-', '=', '+', '!', '`', '~', '@', '#', '$', '%', '^', '&', '*', ';', ':', '"', "'"]
+        for char in invalid_chars:
+            if char in username:
+                raise ValidationError('Your username have invalid characters..!')
+
         if user.exists():
             raise ValidationError('This username already exists.')
         return username
